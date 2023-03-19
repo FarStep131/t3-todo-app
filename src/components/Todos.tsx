@@ -1,5 +1,6 @@
 import { api } from "~/utils/api";
 import { Todo } from "~/components/Todo";
+import { ProgressBar } from "~/components/ProgressBar";
 
 export function Todos() {
   const { data: todos, isLoading, isError } = api.todo.all.useQuery();
@@ -30,6 +31,7 @@ export function Todos() {
           </section>
         );
       })}
+      <ProgressBar todos={todos} />
     </>
   );
 }
